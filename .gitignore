@@ -2,7 +2,3 @@
 data/
 __pycache__
 venv_flask/
-
-# add gunicorn later
-serve.py
-wsgi.py

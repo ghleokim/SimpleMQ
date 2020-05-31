@@ -27,10 +27,25 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Run Development Server
+### Run Development Server using flask and gunicorn
+
+```bash
+chmod 744 ./start
+./start
+```
+
+### Run Development Server using flask
+
 ```
 export FLASK_APP=message.py
 flask run
+```
+
+### Build Docker image and run with Docker CLI
+
+```bash
+docker build -t simplemq:0.1 .
+docker run --env-file ./.env -p 8000:8000 simplemq:0.1
 ```
 
 ## API
@@ -57,6 +72,7 @@ DELETE `/{prefix}`
 ## Etc
 
 ### `.env` file example
+
 ```
 FILE_PATH=data/queue
 ROUTES=message/
